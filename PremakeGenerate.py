@@ -64,8 +64,8 @@ class Project:
         self.binaryOutput = GenerateDefaultBinaryOutputPath()
 
         #global settings
-        #self.sourceFiles = []
-        #self.includeDirs = []
+        self.sourceFiles = []
+        self.includeDirs = []
         self.links = {}
 
         self.defines = {}
@@ -123,7 +123,7 @@ class Project:
 
         #include extra source files
         for s in self.sourceFiles:
-            project = project + "\"" + Str(s) + "\",\n"
+            project = project + "\"" + s + "\",\n"
 
         project = project + """}"""
 
