@@ -36,14 +36,14 @@ def Build_SDL():
         os.mkdir("Venders/Build/Dist")
     
     #builds each of the SDL configs
-    subprocess.run(["cmake", "-S", "Venders/SDL", "-B", "Venders/SDL/Build"],
-        shell=True)
-    subprocess.run(["msbuild", "Venders/SDL/Build/SDL2.sln", "-maxCpuCount:4", "/property:Configuration=Release"],
-        shell=True)
-    subprocess.run(["msbuild", "Venders/SDL/Build/SDL2.sln", "-maxCpuCount:4", "/property:Configuration=MinSizeRel"],
-        shell=True)
-    subprocess.run(["msbuild", "Venders/SDL/Build/SDL2.sln", "-maxCpuCount:4", "/property:Configuration=RelWithDebInfo"],
-        shell=True)
+    #subprocess.run(["cmake", "-S", "Venders/SDL", "-B", "Venders/SDL/Build"],
+     #   shell=True)
+    #subprocess.run(["msbuild", "Venders/SDL/Build/SDL2.sln", "-maxCpuCount:4", "/property:Configuration=Release"],
+    #    shell=True)
+    #subprocess.run(["msbuild", "Venders/SDL/Build/SDL2.sln", "-maxCpuCount:4", "/property:Configuration=MinSizeRel"],
+    #    shell=True)
+    #subprocess.run(["msbuild", "Venders/SDL/Build/SDL2.sln", "-maxCpuCount:4", "/property:Configuration=RelWithDebInfo"],
+    #    shell=True)
 
     #copy to the Vender/Build folder for each config
     shutil.copyfile("Venders/SDL/Build/RelWithDebInfo/SDL2.dll", "Venders/Build/Debug/SDL2.dll")
